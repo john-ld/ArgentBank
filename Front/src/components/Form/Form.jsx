@@ -21,17 +21,15 @@ const userLogin = async (payload) => {
 
 export const Form = () => {
   const form = useRef();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
+
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const loginData = {
-      email,
-      password,
-      rememberMe,
+      email: form.current[0].value,
+      password: form.current[1].value,
+      rememberMe: form.current[2].checked,
     };
     const payload = JSON.stringify(loginData);
     try {
@@ -61,32 +59,15 @@ export const Form = () => {
     <form ref={form} onSubmit={handleSubmit}>
       <div>
         <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        <input type="email" id="email" />
       </div>
       <div>
         <label htmlFor="password">Mot de passe:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+        <input type="password" id="password" />
       </div>
       <div>
         <label htmlFor="rememberMe">Remember me</label>
-        <input
-          type="checkbox"
-          id="rememberMe"
-          checked={rememberMe}
-          onChange={(e) => setRememberMe(e.target.checked)}
-        />
+        <input type="checkbox" id="rememberMe" />
       </div>
       <span> {errorMessage}</span>
       <button type="submit">Se connecter</button>
