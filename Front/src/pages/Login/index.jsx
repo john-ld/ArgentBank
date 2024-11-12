@@ -1,5 +1,5 @@
 import DocumentTitle from "../../components/DocumentTitle";
-import { Form } from "../../components/Form/Form";
+import Form from "../../components/Form/Form";
 
 function Login() {
   const title = "Sign in";

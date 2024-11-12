@@ -1,4 +1,5 @@
 import DocumentTitle from "../../components/DocumentTitle";
+import UserHeader from "../../components/UserHeader/UserHeader";
 
 function User() {
   const title = "Profile";
@@ -6,6 +7,7 @@ function User() {
     <>
       <DocumentTitle title={title} />
       <main className="main bg-dark">
+        <UserHeader />
         <section className="account">
           <div className="account-content-wrapper">
             <h3 className="account-title">Argent Bank Checking (x8349)</h3>
