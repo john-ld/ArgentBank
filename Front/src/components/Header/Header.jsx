@@ -3,16 +3,19 @@ import logo from "../../../public/argentBankLogo.webp"
 import { useDispatch, useSelector } from "react-redux"
 import { logout } from "../../store/authSlice"
 
+// Composant Header - Barre de navigation avec connexion/déconnexion
 export default function Header() {
-  const token = useSelector((state) => state.auth.token)
-  const userName = useSelector((state) => state.auth.userName)
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const token = useSelector((state) => state.auth.token) // Sélection du token d'authentification
+  const userName = useSelector((state) => state.auth.userName) // Sélection du nom utilisateur
+  const navigate = useNavigate() // Navigation après déconnexion
+  const dispatch = useDispatch() // Dispatcher pour les actions Redux
 
+  // Fonction de déconnexion
   const handleLogout = () => {
-    dispatch(logout())
-    navigate("/")
+    dispatch(logout()) // Action pour déconnecter l'utilisateur
+    navigate("/") // Redirection vers l'accueil
   }
+
   return (
     <header className="main-header">
       <nav className="main-nav">
@@ -23,6 +26,8 @@ export default function Header() {
             alt="Argent Bank Logo"
           />
         </Link>
+
+        {/* Section de navigation en fonction de l'état de connexion */}
         <div>
           {token ? (
             <div>
