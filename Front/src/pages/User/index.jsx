@@ -1,8 +1,8 @@
-import DocumentTitle from "../../components/DocumentTitle";
-import UserHeader from "../../components/UserHeader/UserHeader";
+import DocumentTitle from "../../components/DocumentTitle"
+import UserHeader from "../../components/UserHeader/UserHeader"
 
 function User() {
-  const title = "Profile";
+  const title = "Profile"
   return (
     <>
       <DocumentTitle title={title} />
@@ -40,6 +40,6 @@ function User() {
         </section>
       </main>
     </>
-  );
+  )
 }
-export default User;
+export default User

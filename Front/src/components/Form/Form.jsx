@@ -57,7 +57,20 @@ const Form = () => {
 
   return (
     <form ref={form} onSubmit={handleSubmit}>
-      {/* Inputs du formulaire */}
+      <div className="input-wrapper">
+        <label htmlFor="email">Username</label>
+        <input type="email" id="email" />
+      </div>
+      <div className="input-wrapper">
+        <label htmlFor="password">Password</label>
+        <input type="password" id="password" />
+      </div>
+      <div className="input-remember">
+        <input type="checkbox" id="remember-me" />
+        <label htmlFor="remember-me">Remember me</label>
+      </div>
+      <button className="sign-in-button">Sign In</button>
+      {errorMessage && <p className="error">{errorMessage}</p>}
     </form>
   )
 }
